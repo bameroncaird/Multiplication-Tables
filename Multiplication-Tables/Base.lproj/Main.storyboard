@@ -1,24 +1,1649 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--High Score Controller-->
+        <scene sceneID="b7W-eX-LCP">
+            <objects>
+                <viewController id="lha-Ju-TOB" customClass="highScoreController" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W9O-MS-hlW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6z-mj-Dhf" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="16" y="13" width="140" height="56"/>
+                                <color key="backgroundColor" red="0.1023565947" green="0.41994178920000003" blue="0.57478545979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="15" maxX="30" maxY="15"/>
+                                <state key="normal" title="&lt; Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="gOF-dq-Xzm"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="wRs-ik-UNR">
+                                <rect key="frame" x="57" y="181" width="261" height="305.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current high  score is: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Im-xWm">
+                                        <rect key="frame" x="23" y="0.0" width="215" height="51"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkc-Ep-PEK">
+                                        <rect key="frame" x="56.5" y="121" width="148.5" height="63.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="100"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play timed quizzes to  get more high scores!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-ah-Cgk">
+                                        <rect key="frame" x="0.0" y="254.5" width="261" height="51"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvg-uv-gIe" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="10" y="594" width="355" height="48"/>
+                                <color key="backgroundColor" red="0.40930300310000001" green="0.76939731840000003" blue="0.2982515751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                <state key="normal" title="TIMED QUIZ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="rV1-P0-6FK" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="NpT-mT-qbW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200869999999" green="0.65210508700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="yvg-uv-gIe" firstAttribute="leading" secondItem="RB5-zB-tmp" secondAttribute="leading" constant="10" id="0h6-vo-Ffw"/>
+                            <constraint firstItem="RB5-zB-tmp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H6z-mj-Dhf" secondAttribute="trailing" symbolic="YES" id="8P1-ZM-Y0o"/>
+                            <constraint firstItem="wRs-ik-UNR" firstAttribute="centerX" secondItem="W9O-MS-hlW" secondAttribute="centerX" id="FsH-BW-y2A"/>
+                            <constraint firstItem="RB5-zB-tmp" firstAttribute="bottom" secondItem="yvg-uv-gIe" secondAttribute="bottom" constant="25" id="GF1-c6-CgC"/>
+                            <constraint firstItem="H6z-mj-Dhf" firstAttribute="leading" secondItem="RB5-zB-tmp" secondAttribute="leading" constant="16" id="ME0-72-x58"/>
+                            <constraint firstItem="wRs-ik-UNR" firstAttribute="centerY" secondItem="W9O-MS-hlW" secondAttribute="centerY" id="jDe-j4-UFK"/>
+                            <constraint firstItem="H6z-mj-Dhf" firstAttribute="top" secondItem="RB5-zB-tmp" secondAttribute="top" constant="13" id="u43-7b-xIj"/>
+                            <constraint firstItem="RB5-zB-tmp" firstAttribute="trailing" secondItem="yvg-uv-gIe" secondAttribute="trailing" constant="10" id="ui2-Ha-hHO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RB5-zB-tmp"/>
+                    </view>
+                    <connections>
+                        <outlet property="highScore" destination="qkc-Ep-PEK" id="F3l-Yk-rlW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fb1-4b-LsD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4481.25" y="-3236.6197183098593"/>
+        </scene>
+        <!--CountdownVC-->
+        <scene sceneID="Cka-gi-d3p">
+            <objects>
+                <viewController id="rV1-P0-6FK" customClass="countdownVC" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZg-aR-lVm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Ready!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTQ-yG-fzL">
+                                <rect key="frame" x="74.5" y="100" width="226.5" height="44.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="QIi-d8-aac">
+                                <rect key="frame" x="64.5" y="249.5" width="246.5" height="168.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz starting in: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDX-TJ-NcY">
+                                        <rect key="frame" x="0.0" y="0.0" width="246.5" height="32"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-7F-IGS">
+                                        <rect key="frame" x="97.5" y="67" width="51.5" height="101.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="80"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="200"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200869999999" green="0.65210508700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QIi-d8-aac" firstAttribute="centerY" secondItem="lZg-aR-lVm" secondAttribute="centerY" id="E1m-3S-6DP"/>
+                            <constraint firstItem="QIi-d8-aac" firstAttribute="centerX" secondItem="lZg-aR-lVm" secondAttribute="centerX" id="HzO-iK-gWX"/>
+                            <constraint firstItem="YTQ-yG-fzL" firstAttribute="top" secondItem="tUf-bZ-sI6" secondAttribute="top" constant="100" id="b55-kN-aa2"/>
+                            <constraint firstItem="YTQ-yG-fzL" firstAttribute="centerX" secondItem="lZg-aR-lVm" secondAttribute="centerX" id="fKw-Ar-uPx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tUf-bZ-sI6"/>
+                    </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="jAS-7F-IGS" id="yaf-Jh-4AO"/>
+                        <segue destination="Hks-4X-BdY" kind="presentation" identifier="countdownZero" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ylf-05-mWF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqo-nw-Rwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3664" y="-3769"/>
+        </scene>
+        <!--Timed Play Controller-->
+        <scene sceneID="MAg-9f-eGL">
+            <objects>
+                <viewController storyboardIdentifier="Timed Play View Controller" id="Hks-4X-BdY" customClass="timedPlayController" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8U8-lA-JsD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydk-ay-ABk" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="16" y="13" width="110" height="46"/>
+                                <color key="backgroundColor" red="0.1023565947" green="0.41994178920000003" blue="0.57478545979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                <state key="normal" title="&lt; Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="Xwz-Qi-Ihc"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Jb-xn-x54" userLabel="Score label">
+                                <rect key="frame" x="261" y="23" width="98" height="25.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-O2-jHN">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q60-mF-y51">
+                                        <rect key="frame" x="84" y="0.0" width="14" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="mF3-R3-Ylk">
+                                <rect key="frame" x="0.0" y="115" width="375" height="487"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0ZO-Yd-uLc">
+                                        <rect key="frame" x="72.5" y="0.0" width="230" height="184"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timer label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="872-BS-ZFl">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="25.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="53A-Bm-SgK" userLabel="x times y">
+                                                <rect key="frame" x="8.5" y="25.5" width="213" height="88.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2x-fV-NSc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn4-49-WSJ">
+                                                        <rect key="frame" x="76" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="80"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEv-DL-d97">
+                                                        <rect key="frame" x="152" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="yn4-49-WSJ" secondAttribute="bottom" id="ESG-nA-LnM"/>
+                                                    <constraint firstItem="OEv-DL-d97" firstAttribute="top" secondItem="53A-Bm-SgK" secondAttribute="top" id="Hk9-er-KWl"/>
+                                                    <constraint firstItem="yn4-49-WSJ" firstAttribute="top" secondItem="53A-Bm-SgK" secondAttribute="top" id="Lis-Jg-pmm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="O2x-fV-NSc" secondAttribute="bottom" id="N35-LK-6bk"/>
+                                                    <constraint firstItem="O2x-fV-NSc" firstAttribute="top" secondItem="53A-Bm-SgK" secondAttribute="top" id="Vhk-7w-2JI"/>
+                                                    <constraint firstItem="O2x-fV-NSc" firstAttribute="leading" secondItem="53A-Bm-SgK" secondAttribute="leading" id="YHo-qY-Erx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OEv-DL-d97" secondAttribute="trailing" id="dBP-7s-Yhg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OEv-DL-d97" secondAttribute="bottom" id="gBw-eO-3lj"/>
+                                                </constraints>
+                                            </stackView>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6E-GU-u7N">
+                                                <rect key="frame" x="0.0" y="114" width="230" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="04n-y1-k8c">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="70" id="utj-us-xvG">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="125"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="120"/>
+                                                </variation>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="872-BS-ZFl" secondAttribute="trailing" id="23f-Ik-8Kc"/>
+                                            <constraint firstItem="872-BS-ZFl" firstAttribute="leading" secondItem="0ZO-Yd-uLc" secondAttribute="leading" id="M7u-O4-KYI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-rs-Vah">
+                                        <rect key="frame" x="10" y="224" width="355" height="263"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-vv-HpL">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="62"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzh-sK-0zg" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n1Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="E9K-L4-yl9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFV-hz-jAk" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n2Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="JCT-kU-qbq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POZ-M0-eq8" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="240" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n3Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="23a-pp-OQl"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ebL-54-RO9">
+                                                <rect key="frame" x="0.0" y="67" width="355" height="62"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-XF-SJQ" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n4Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="bec-LJ-5iQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CZ-7F-gqk" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n5Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="9JP-b4-yHN"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1km-aB-iQw" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="240" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n6Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="HD9-cU-PYF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Adb-BZ-cqH">
+                                                <rect key="frame" x="0.0" y="134" width="355" height="62"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pC9-fO-4nk" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n7Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="tPm-Vk-Nd9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-6m-UDQ" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n8Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="0o4-M6-m1V"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhh-Pn-Owo" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="240" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n9Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="R5L-ch-H22"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="D2t-uQ-6da">
+                                                <rect key="frame" x="0.0" y="201" width="355" height="62"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-A9-LDX" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="3" width="115" height="56"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                                        <state key="normal" title="DELETE">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="56"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="deleteTapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="7d4-QM-FTL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13a-c1-m7Y" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="2.5" width="115" height="57"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n0Tapped:" destination="Hks-4X-BdY" eventType="touchUpInside" id="0f6-HB-07D"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFj-Nt-zIf" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="240" y="0.0" width="115" height="62"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="15" maxX="10" maxY="15"/>
+                                                        <state key="normal" title="ENTER">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="57"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="enterPressed:" destination="Hks-4X-BdY" eventType="touchUpInside" id="fh5-6d-yxy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kRo-vv-HpL" secondAttribute="trailing" id="7mY-A7-5pr"/>
+                                            <constraint firstAttribute="trailing" secondItem="ebL-54-RO9" secondAttribute="trailing" id="A6N-Ir-QlY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Adb-BZ-cqH" secondAttribute="trailing" id="Mjx-eG-eoH"/>
+                                            <constraint firstItem="Adb-BZ-cqH" firstAttribute="leading" secondItem="E6p-rs-Vah" secondAttribute="leading" id="Znb-Di-VSl"/>
+                                            <constraint firstItem="D2t-uQ-6da" firstAttribute="leading" secondItem="E6p-rs-Vah" secondAttribute="leading" id="hIz-xa-DDg"/>
+                                            <constraint firstAttribute="trailing" secondItem="D2t-uQ-6da" secondAttribute="trailing" id="jfe-T6-2dO"/>
+                                            <constraint firstItem="ebL-54-RO9" firstAttribute="leading" secondItem="E6p-rs-Vah" secondAttribute="leading" id="pFS-OY-fNm"/>
+                                            <constraint firstItem="kRo-vv-HpL" firstAttribute="leading" secondItem="E6p-rs-Vah" secondAttribute="leading" id="xi4-NB-2fi"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E6p-rs-Vah" secondAttribute="trailing" constant="10" id="UXX-7Q-Ny9"/>
+                                    <constraint firstItem="E6p-rs-Vah" firstAttribute="leading" secondItem="mF3-R3-Ylk" secondAttribute="leading" constant="10" id="mu8-8g-lmR"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="45"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200869999999" green="0.65210508700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2Jb-xn-x54" firstAttribute="top" secondItem="aQk-KE-eL4" secondAttribute="top" constant="23" id="Q4m-Be-xdM"/>
+                            <constraint firstItem="aQk-KE-eL4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ydk-ay-ABk" secondAttribute="trailing" symbolic="YES" id="Wf3-lu-mnY"/>
+                            <constraint firstItem="mF3-R3-Ylk" firstAttribute="leading" secondItem="aQk-KE-eL4" secondAttribute="leading" id="dHB-gU-hZY"/>
+                            <constraint firstItem="aQk-KE-eL4" firstAttribute="trailing" secondItem="mF3-R3-Ylk" secondAttribute="trailing" id="htP-fX-ASt"/>
+                            <constraint firstItem="aQk-KE-eL4" firstAttribute="trailing" secondItem="2Jb-xn-x54" secondAttribute="trailing" constant="16" id="meW-Fq-dzw"/>
+                            <constraint firstItem="mF3-R3-Ylk" firstAttribute="centerY" secondItem="8U8-lA-JsD" secondAttribute="centerY" constant="25" id="uIc-ZV-rsB">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Ydk-ay-ABk" firstAttribute="leading" secondItem="aQk-KE-eL4" secondAttribute="leading" constant="16" id="wq4-Ql-wH0"/>
+                            <constraint firstItem="Ydk-ay-ABk" firstAttribute="top" secondItem="aQk-KE-eL4" secondAttribute="top" constant="13" id="x7I-1i-iz9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aQk-KE-eL4"/>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="nuf-A9-LDX" id="tMa-sw-Ehc"/>
+                        <outlet property="enterAnswer" destination="dFj-Nt-zIf" id="EA6-FO-Vnz"/>
+                        <outlet property="n0" destination="13a-c1-m7Y" id="8TY-eK-QtV"/>
+                        <outlet property="n1" destination="hzh-sK-0zg" id="2oA-3Z-jgb"/>
+                        <outlet property="n2" destination="bFV-hz-jAk" id="rkv-fQ-OCh"/>
+                        <outlet property="n3" destination="POZ-M0-eq8" id="6FK-nJ-0t2"/>
+                        <outlet property="n4" destination="bHU-XF-SJQ" id="7n5-Ha-0TQ"/>
+                        <outlet property="n5" destination="3CZ-7F-gqk" id="L2L-dc-CpN"/>
+                        <outlet property="n6" destination="1km-aB-iQw" id="0U2-nf-ax7"/>
+                        <outlet property="n7" destination="pC9-fO-4nk" id="DCL-l3-7za"/>
+                        <outlet property="n8" destination="sq8-6m-UDQ" id="g0w-sr-7Fd"/>
+                        <outlet property="n9" destination="rhh-Pn-Owo" id="OBt-PW-FYa"/>
+                        <outlet property="number1" destination="O2x-fV-NSc" id="iVk-jq-Xdh"/>
+                        <outlet property="number2" destination="OEv-DL-d97" id="BXw-21-Y4a"/>
+                        <outlet property="scoreLabel" destination="Q60-mF-y51" id="TSe-aP-Zqd"/>
+                        <outlet property="textField" destination="r6E-GU-u7N" id="et9-N3-A1M"/>
+                        <outlet property="timerLabel" destination="872-BS-ZFl" id="iDo-Kg-Jyf"/>
+                        <segue destination="4Tx-FD-vvQ" kind="presentation" identifier="summaryTransition" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mCV-gv-qUJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gWF-uy-MeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2803" y="-4353"/>
+        </scene>
+        <!--SummaryVC-->
+        <scene sceneID="Zp6-fl-YaD">
+            <objects>
+                <viewController id="4Tx-FD-vvQ" customClass="summaryVC" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbm-c1-v9c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="N3I-rA-QuU">
+                                <rect key="frame" x="0.0" y="120.5" width="375" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score was: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-pZ-XqN">
+                                        <rect key="frame" x="92.5" y="0.0" width="190" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUq-fY-D3S">
+                                        <rect key="frame" x="162" y="65.5" width="51.5" height="101.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="80"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="160"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations! New  High Score!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-M6-n1V">
+                                        <rect key="frame" x="61" y="207" width="253" height="51"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVe-69-6Im" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="298" width="255" height="46"/>
+                                        <color key="backgroundColor" red="0.1023565947" green="0.41994178920000003" blue="0.57478545979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                        <state key="normal" title="Back to Home">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="Uor-q9-ouc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ4-hG-LC9" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="384" width="255" height="42"/>
+                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="30" minY="8" maxX="30" maxY="8"/>
+                                        <state key="normal" title="High Scores">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="lha-Ju-TOB" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CPK-ss-Vcm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LVe-69-6Im" firstAttribute="leading" secondItem="N3I-rA-QuU" secondAttribute="leading" constant="60" id="9Yx-qn-FDy"/>
+                                    <constraint firstAttribute="trailing" secondItem="LVe-69-6Im" secondAttribute="trailing" constant="60" id="U4I-sP-B3F"/>
+                                    <constraint firstAttribute="trailing" secondItem="tJ4-hG-LC9" secondAttribute="trailing" constant="60" id="ezr-sq-VI3"/>
+                                    <constraint firstItem="tJ4-hG-LC9" firstAttribute="leading" secondItem="N3I-rA-QuU" secondAttribute="leading" constant="60" id="uNE-A4-mHu"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="70"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200869999999" green="0.65210508700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="N3I-rA-QuU" firstAttribute="centerY" secondItem="fbm-c1-v9c" secondAttribute="centerY" id="Gcs-NR-7Oj"/>
+                            <constraint firstItem="N3I-rA-QuU" firstAttribute="centerX" secondItem="fbm-c1-v9c" secondAttribute="centerX" id="RBR-XW-zVt"/>
+                            <constraint firstAttribute="trailing" secondItem="N3I-rA-QuU" secondAttribute="trailing" id="V1N-R1-FLT"/>
+                            <constraint firstItem="N3I-rA-QuU" firstAttribute="leading" secondItem="fbm-c1-v9c" secondAttribute="leading" id="kpG-RM-ddp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oxw-hI-QPG"/>
+                    </view>
+                    <connections>
+                        <outlet property="message" destination="lZv-M6-n1V" id="zNP-Jg-WJh"/>
+                        <outlet property="scoreLabel" destination="EUq-fY-D3S" id="twq-V8-dwJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFe-t9-3DJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1906.875" y="-4650"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplication  Tables" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-gp-Jpj">
+                                <rect key="frame" x="42.5" y="15" width="290.5" height="88.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="72"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJi-UE-XIZ" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="74" y="584.5" width="227" height="42"/>
+                                <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="50" minY="8" maxX="50" maxY="8"/>
+                                <state key="normal" title="High Scores">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="lha-Ju-TOB" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="zy9-F0-N5n"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your best score." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP2-zL-3cg">
+                                <rect key="frame" x="109.5" y="641.5" width="156.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="DGa-V9-oVW" userLabel="playSectionStack">
+                                <rect key="frame" x="10" y="226" width="355" height="215.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V2B-Ue-s6T" userLabel="playButtonStack1">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="74.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-ia-BU7" customClass="coolButton" customModule="Multiplication_Tables">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
+                                                <color key="backgroundColor" red="0.40930300310000001" green="0.76939731840000003" blue="0.2982515751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <state key="normal" title="FREE PLAY">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
+                                                </variation>
+                                                <connections>
+                                                    <segue destination="D6L-Ib-F2d" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IbA-W9-x2v"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice your skills with no timer." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXc-Xx-XAN">
+                                                <rect key="frame" x="0.0" y="58" width="355" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NbN-S0-A0G" userLabel="playButtonStack2">
+                                        <rect key="frame" x="0.0" y="124.5" width="355" height="91"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aJ-4b-26t" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
+                                                <color key="backgroundColor" red="0.40930300310000001" green="0.76939731840000003" blue="0.2982515751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                                <state key="normal" title="TIMED QUIZ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
+                                                </variation>
+                                                <connections>
+                                                    <segue destination="rV1-P0-6FK" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jvY-j5-XFh"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer as many questions as possible in one minute." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-hh-Gv2">
+                                                <rect key="frame" x="0.0" y="58" width="355" height="33"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="150"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200870171439" green="0.6521050870155749" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DGa-V9-oVW" secondAttribute="trailing" constant="10" id="5Al-AX-jCm"/>
+                            <constraint firstItem="DGa-V9-oVW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AFh-Ra-9Ld"/>
+                            <constraint firstItem="DP2-zL-3cg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AgF-sL-91Z"/>
+                            <constraint firstItem="DP2-zL-3cg" firstAttribute="top" secondItem="FJi-UE-XIZ" secondAttribute="bottom" constant="15" id="KlQ-Z1-3d0"/>
+                            <constraint firstItem="u5t-gp-Jpj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TAc-4U-r7M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DP2-zL-3cg" secondAttribute="bottom" constant="10" id="VUa-zj-a0y"/>
+                            <constraint firstItem="DGa-V9-oVW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vg6-4A-r7A"/>
+                            <constraint firstItem="DGa-V9-oVW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="dfG-FA-X3K"/>
+                            <constraint firstItem="FJi-UE-XIZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ftf-Q9-mql"/>
+                            <constraint firstItem="u5t-gp-Jpj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="kFo-Dz-dJs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-3266" y="-2806"/>
+        </scene>
+        <!--Free Play ControllerMC-->
+        <scene sceneID="0Cp-t4-bol">
+            <objects>
+                <viewController id="D6L-Ib-F2d" customClass="freePlayControllerMC" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XDJ-cs-sTB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M3-sF-57p" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="16" y="13" width="140" height="56"/>
+                                <color key="backgroundColor" red="0.1023565947" green="0.41994178920000003" blue="0.57478545979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="15" maxX="30" maxY="15"/>
+                                <state key="normal" title="&lt; Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="tSp-1C-NPk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-Mf-5Np" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="93" y="629" width="189" height="28"/>
+                                <color key="backgroundColor" red="0.40930300310000001" green="0.76939731840000003" blue="0.2982515751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Free Response">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="4jN-Ca-DTT" kind="presentation" modalPresentationStyle="fullScreen" id="qmA-LU-27y"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="JZx-vk-Qzt" userLabel="all buttons, stack view">
+                                <rect key="frame" x="25" y="157.5" width="325" height="362.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HdG-eC-dFM" userLabel="x times y">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="88.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjA-Hv-HXf">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="88.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-Cy-mO4">
+                                                <rect key="frame" x="113.5" y="0.0" width="98" height="88.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="125"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noy-06-KQk">
+                                                <rect key="frame" x="226.5" y="0.0" width="98.5" height="88.5"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ept-Cy-mO4" firstAttribute="top" secondItem="HdG-eC-dFM" secondAttribute="top" id="CmY-ac-2xt"/>
+                                            <constraint firstItem="noy-06-KQk" firstAttribute="top" secondItem="HdG-eC-dFM" secondAttribute="top" id="HYF-Yp-Yma"/>
+                                            <constraint firstAttribute="trailing" secondItem="noy-06-KQk" secondAttribute="trailing" id="P3s-Rk-7V4"/>
+                                            <constraint firstItem="mjA-Hv-HXf" firstAttribute="leading" secondItem="HdG-eC-dFM" secondAttribute="leading" id="aY4-cc-h28"/>
+                                            <constraint firstAttribute="bottom" secondItem="noy-06-KQk" secondAttribute="bottom" id="b9z-VM-8bf"/>
+                                            <constraint firstAttribute="bottom" secondItem="ept-Cy-mO4" secondAttribute="bottom" id="gqy-Mk-6jm"/>
+                                            <constraint firstItem="mjA-Hv-HXf" firstAttribute="top" secondItem="HdG-eC-dFM" secondAttribute="top" id="i1H-Hv-ytV"/>
+                                            <constraint firstAttribute="bottom" secondItem="mjA-Hv-HXf" secondAttribute="bottom" id="tna-qC-ATL"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="hwi-JU-lgf" userLabel="buttons 1 and 2">
+                                        <rect key="frame" x="0.0" y="141.5" width="325" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBi-Y4-6gY" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="84"/>
+                                                <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="110"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="button1Tapped:" destination="D6L-Ib-F2d" eventType="touchUpInside" id="Irb-Ot-OSV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS7-2k-Qyc" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                <rect key="frame" x="179" y="0.0" width="146" height="84"/>
+                                                <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="110"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="button2Tapped:" destination="D6L-Ib-F2d" eventType="touchUpInside" id="3AM-sX-cHm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="M5L-w6-PvZ" userLabel="buttons 3 and 4">
+                                        <rect key="frame" x="0.0" y="278.5" width="325" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2F-5m-WfZ" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="84"/>
+                                                <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="110"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="button3Tapped:" destination="D6L-Ib-F2d" eventType="touchUpInside" id="y9T-l0-6Sc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCm-HN-gJB" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                <rect key="frame" x="179" y="0.0" width="146" height="84"/>
+                                                <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="110"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="button4Tapped:" destination="D6L-Ib-F2d" eventType="touchUpInside" id="kPF-ur-mgp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=regular" spacing="75"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3692208904" green="0.65001605309999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="JZx-vk-Qzt" firstAttribute="centerX" secondItem="XDJ-cs-sTB" secondAttribute="centerX" id="3yt-n5-2y5"/>
+                            <constraint firstItem="2M3-sF-57p" firstAttribute="leading" secondItem="O0M-Or-2rB" secondAttribute="leading" constant="16" id="E4c-QC-Jco"/>
+                            <constraint firstItem="QCg-Mf-5Np" firstAttribute="centerX" secondItem="XDJ-cs-sTB" secondAttribute="centerX" id="El4-gx-EDE"/>
+                            <constraint firstItem="JZx-vk-Qzt" firstAttribute="leading" secondItem="O0M-Or-2rB" secondAttribute="leading" constant="25" id="IHe-W2-Gh0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                            </constraint>
+                            <constraint firstItem="O0M-Or-2rB" firstAttribute="bottom" secondItem="QCg-Mf-5Np" secondAttribute="bottom" constant="10" id="Lhb-K0-85u">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="O0M-Or-2rB" firstAttribute="trailing" secondItem="QCg-Mf-5Np" secondAttribute="trailing" constant="93" id="MLa-qu-77c">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint firstItem="O0M-Or-2rB" firstAttribute="trailing" secondItem="JZx-vk-Qzt" secondAttribute="trailing" constant="25" id="YWt-VH-Ara">
+                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                            </constraint>
+                            <constraint firstItem="2M3-sF-57p" firstAttribute="top" secondItem="O0M-Or-2rB" secondAttribute="top" constant="13" id="Yjd-X7-vMA"/>
+                            <constraint firstItem="O0M-Or-2rB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2M3-sF-57p" secondAttribute="trailing" symbolic="YES" id="dFr-Pj-yre"/>
+                            <constraint firstItem="JZx-vk-Qzt" firstAttribute="centerY" secondItem="XDJ-cs-sTB" secondAttribute="centerY" constant="5" id="sYP-pE-abP">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-30"/>
+                            </constraint>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O0M-Or-2rB"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="HBi-Y4-6gY" id="ZGX-sT-mVc"/>
+                        <outlet property="button2" destination="AS7-2k-Qyc" id="ZAi-gy-4dF"/>
+                        <outlet property="button3" destination="u2F-5m-WfZ" id="SEc-qW-tPe"/>
+                        <outlet property="button4" destination="OCm-HN-gJB" id="Xut-SI-zaZ"/>
+                        <outlet property="number1" destination="mjA-Hv-HXf" id="YG6-9T-uBR"/>
+                        <outlet property="number2" destination="noy-06-KQk" id="sHn-mx-ooE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKo-hQ-zcD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1905" y="-3852"/>
+        </scene>
+        <!--Free Play ControllerFR-->
+        <scene sceneID="fux-Vv-Usm">
+            <objects>
+                <viewController id="4jN-Ca-DTT" customClass="freePlayControllerFR" customModule="Multiplication_Tables" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyd-wr-Zrr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-M9-kqT" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="16" y="13" width="90" height="39"/>
+                                <color key="backgroundColor" red="0.1023565947" green="0.41994178920000003" blue="0.57478545979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                <state key="normal" title="&lt; Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="cdI-WL-OyE"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-v4-0qZ">
+                                <rect key="frame" x="10" y="95.5" width="355" height="476.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="HR3-X3-Yh3">
+                                        <rect key="frame" x="62.5" y="0.0" width="230" height="161.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Ef-w6-i8T" userLabel="x times y">
+                                                <rect key="frame" x="8.5" y="0.0" width="213" height="88.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tU-Sc-ZhK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huK-O6-Qdd">
+                                                        <rect key="frame" x="76" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="90"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTc-py-pHL">
+                                                        <rect key="frame" x="152" y="0.0" width="61" height="88.5"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="70"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="150"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="huK-O6-Qdd" secondAttribute="bottom" id="3yi-rd-f19"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nTc-py-pHL" secondAttribute="bottom" id="Gld-OY-sU0"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1tU-Sc-ZhK" secondAttribute="bottom" id="WJo-YR-w3U"/>
+                                                    <constraint firstItem="1tU-Sc-ZhK" firstAttribute="top" secondItem="7Ef-w6-i8T" secondAttribute="top" id="d3f-d0-ohd"/>
+                                                    <constraint firstItem="1tU-Sc-ZhK" firstAttribute="leading" secondItem="7Ef-w6-i8T" secondAttribute="leading" id="lsT-Ii-OLm"/>
+                                                    <constraint firstItem="nTc-py-pHL" firstAttribute="top" secondItem="7Ef-w6-i8T" secondAttribute="top" id="pCv-s7-lqt"/>
+                                                    <constraint firstItem="huK-O6-Qdd" firstAttribute="top" secondItem="7Ef-w6-i8T" secondAttribute="top" id="qCn-SG-WhX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nTc-py-pHL" secondAttribute="trailing" id="vV7-DM-tcK"/>
+                                                </constraints>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="50"/>
+                                            </stackView>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMd-Cu-8Fv">
+                                                <rect key="frame" x="0.0" y="91.5" width="230" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="Etk-ev-9qR">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="325"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="70" id="JfV-bQ-AxI">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="125"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="60"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="120"/>
+                                                </variation>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0jM-i7-TxR" userLabel="button stack">
+                                        <rect key="frame" x="10" y="241.5" width="335" height="235"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oUu-7p-LbA">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyA-E5-3gt" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n1Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="uge-4I-87g"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVO-Al-QLQ" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="113.5" y="0.0" width="108" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n2Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="Yh7-t1-K39"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y9-cG-5aX" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="226.5" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n3Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="mmW-Hg-wQ1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ssn-Dc-CeI">
+                                                <rect key="frame" x="0.0" y="60" width="335" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrZ-ox-mif" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n4Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="tV8-1I-4Dg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNR-pX-yL8" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="113.5" y="0.0" width="108" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n5Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="9Li-AS-ijr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjq-ft-Fua" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="226.5" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n6Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="qzg-LA-cXN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dGR-sf-3mh">
+                                                <rect key="frame" x="0.0" y="120" width="335" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN5-Mt-qbL" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n7Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="7KB-Jg-Pag"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-U7-QP1" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="113.5" y="0.0" width="108" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n8Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="zB0-la-1TM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VL-fm-L98" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="226.5" y="0.0" width="108.5" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n9Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="Ih3-YE-eW8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z23-HO-pC6">
+                                                <rect key="frame" x="0.0" y="180" width="335" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Be-Dx-KcS" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1.5" width="108.5" height="52"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="15" maxX="8" maxY="15"/>
+                                                        <state key="normal" title="DELETE">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="51"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="deleteTapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="AkG-bl-bds"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5D-3U-mdj" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="113.5" y="0.0" width="108" height="55"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="75"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="n0Tapped:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="osV-Fj-Z7P"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tyc-4s-3jg" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                                        <rect key="frame" x="226.5" y="0.5" width="108.5" height="54"/>
+                                                        <color key="backgroundColor" red="0.27232811540000001" green="0.16875139829999999" blue="0.34938436499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                                        <inset key="contentEdgeInsets" minX="9" minY="15" maxX="9" maxY="15"/>
+                                                        <state key="normal" title="ENTER">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="57"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="enterPressed:" destination="4jN-Ca-DTT" eventType="touchUpInside" id="PdC-hQ-jB8"/>
+                                                            <action selector="enterPressed:" destination="Hks-4X-BdY" eventType="touchUpInside" id="oFU-7C-DfS"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="z23-HO-pC6" firstAttribute="leading" secondItem="0jM-i7-TxR" secondAttribute="leading" id="DeW-BY-IYR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ssn-Dc-CeI" secondAttribute="trailing" id="Fhf-Vo-6qU"/>
+                                            <constraint firstItem="dGR-sf-3mh" firstAttribute="leading" secondItem="0jM-i7-TxR" secondAttribute="leading" id="Y3p-Sj-JeH"/>
+                                            <constraint firstItem="oUu-7p-LbA" firstAttribute="leading" secondItem="0jM-i7-TxR" secondAttribute="leading" id="gxA-9A-OCp"/>
+                                            <constraint firstAttribute="trailing" secondItem="oUu-7p-LbA" secondAttribute="trailing" id="j35-zA-ymz"/>
+                                            <constraint firstItem="Ssn-Dc-CeI" firstAttribute="leading" secondItem="0jM-i7-TxR" secondAttribute="leading" id="p1z-PE-1vG"/>
+                                            <constraint firstAttribute="trailing" secondItem="z23-HO-pC6" secondAttribute="trailing" id="swH-a0-tpQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="dGR-sf-3mh" secondAttribute="trailing" id="yXm-4F-hfQ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0jM-i7-TxR" secondAttribute="trailing" constant="10" id="FAt-y4-85J"/>
+                                    <constraint firstItem="0jM-i7-TxR" firstAttribute="leading" secondItem="ly3-v4-0qZ" secondAttribute="leading" constant="10" id="wMZ-jB-CCn"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03j-9J-KqF" customClass="coolButton" customModule="Multiplication_Tables" customModuleProvider="target">
+                                <rect key="frame" x="121" y="634" width="133" height="28"/>
+                                <color key="backgroundColor" red="0.40930300310000001" green="0.76939731840000003" blue="0.2982515751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="Multiple Choice">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="D6L-Ib-F2d" kind="presentation" modalPresentationStyle="fullScreen" id="jCV-T2-n6n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36766200869999999" green="0.65210508700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wpv-t2-HIa" firstAttribute="bottom" secondItem="03j-9J-KqF" secondAttribute="bottom" constant="5" id="0XT-Kz-vaR"/>
+                            <constraint firstItem="wpv-t2-HIa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ndd-M9-kqT" secondAttribute="trailing" symbolic="YES" id="39J-4u-7id"/>
+                            <constraint firstItem="ly3-v4-0qZ" firstAttribute="leading" secondItem="wpv-t2-HIa" secondAttribute="leading" constant="10" id="5Zi-bf-nGk"/>
+                            <constraint firstItem="wpv-t2-HIa" firstAttribute="trailing" secondItem="ly3-v4-0qZ" secondAttribute="trailing" constant="10" id="63T-eB-vkS"/>
+                            <constraint firstItem="ly3-v4-0qZ" firstAttribute="centerY" secondItem="pyd-wr-Zrr" secondAttribute="centerY" id="O3I-TT-Z7x"/>
+                            <constraint firstItem="Ndd-M9-kqT" firstAttribute="leading" secondItem="wpv-t2-HIa" secondAttribute="leading" constant="16" id="S99-3e-aHW"/>
+                            <constraint firstItem="03j-9J-KqF" firstAttribute="centerX" secondItem="pyd-wr-Zrr" secondAttribute="centerX" id="Xcc-0H-he0"/>
+                            <constraint firstItem="Ndd-M9-kqT" firstAttribute="top" secondItem="wpv-t2-HIa" secondAttribute="top" constant="13" id="xRg-L3-xC1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wpv-t2-HIa"/>
+                    </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="3Be-Dx-KcS" id="lFY-ZJ-Ixg"/>
+                        <outlet property="enterButton" destination="Tyc-4s-3jg" id="6ov-pJ-6be"/>
+                        <outlet property="n0" destination="n5D-3U-mdj" id="TKq-2o-Zie"/>
+                        <outlet property="n1" destination="RyA-E5-3gt" id="IrP-6B-AUb"/>
+                        <outlet property="n2" destination="HVO-Al-QLQ" id="Ra6-RV-FnP"/>
+                        <outlet property="n3" destination="2Y9-cG-5aX" id="e5z-Mn-AIq"/>
+                        <outlet property="n4" destination="TrZ-ox-mif" id="2Ku-sA-QF1"/>
+                        <outlet property="n5" destination="tNR-pX-yL8" id="XJ7-2t-EPJ"/>
+                        <outlet property="n6" destination="Hjq-ft-Fua" id="esd-fv-4w5"/>
+                        <outlet property="n7" destination="lN5-Mt-qbL" id="FuH-jb-KWh"/>
+                        <outlet property="n8" destination="sgP-U7-QP1" id="Snf-5W-phH"/>
+                        <outlet property="n9" destination="9VL-fm-L98" id="ijZ-FJ-5hx"/>
+                        <outlet property="number1" destination="1tU-Sc-ZhK" id="KJ2-wI-dlq"/>
+                        <outlet property="number2" destination="nTc-py-pHL" id="eJS-8S-z5T"/>
+                        <outlet property="textField" destination="wMd-Cu-8Fv" id="kFs-lI-5Lx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ksc-2L-GpO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1775.625" y="-3064.4366197183099"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jCV-T2-n6n"/>
+        <segue reference="Uor-q9-ouc"/>
+        <segue reference="jvY-j5-XFh"/>
+        <segue reference="CPK-ss-Vcm"/>
+    </inferredMetricsTieBreakers>
 </document>
